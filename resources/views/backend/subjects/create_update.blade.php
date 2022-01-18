@@ -3,25 +3,25 @@
 @section('content')
     <div class="content col-10">
         <div class="row flex">
-            <h2>{{  $faculty->id ? 'Edit Faculty ' : 'Add Faculty' }}</h2>
+            <h2>{{  $subject->id ? 'Edit Subject ' : 'Add Subject' }}</h2>
         </div>
         <div class="table">
-            @if(!empty($faculty->id))
-                {!! Form::model($faculty, ['method' => 'PUT', 'route' => ['faculties.update', $faculty->id]]) !!}
+            @if(!empty($subject->id))
+                {!! Form::model($subject, ['method' => 'PUT', 'route' => ['subjects.update', $subject->id]]) !!}
             @else
-                {!! Form::model($faculty, ['method' => 'POST', 'route' => ['faculties.store']]) !!}
+                {!! Form::model($subject, ['method' => 'POST', 'route' => ['subjects.store']]) !!}
             @endif
-                {!! Form::hidden('id',  $faculty->id ) !!}
+                {!! Form::hidden('id',  $subject->id ) !!}
             <div class="form-group">
                 {!!  Form::label('name', 'Name:') !!}
-                {!!  Form::text('name', $faculty->name , ['class' => 'form-control']) !!}
+                {!!  Form::text('name', $subject->name , ['class' => 'form-control']) !!}
                 @if ( $errors->has('name') )
                     <span role="alert" style="color:red;">{{ $errors->first('name') }}</span>
                 @endif
             </div>
             <div class="form-group flex">
                 {!! Form::submit('Submit', ['class' => 'btn btn-success']) !!}
-                <a href="{{ route('faculties.index') }}" class="btn btn-default btn-primary">Cancel</a>
+                <a href="{{ route('subjects.index') }}" class="btn btn-default btn-primary">Cancel</a>
                 {!! Form::close() !!}
             </div>
         </div>

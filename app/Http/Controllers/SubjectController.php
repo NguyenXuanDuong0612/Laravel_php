@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\Faculties\FacultyRepositoryInterface;
-use App\Http\Requests\FacultyRequest;
+use App\Repositories\Subjects\SubjectRepositoryInterface;
+use App\Http\Requests\SubjectRequest;
 
-class FacultyController extends Controller
+class SubjectController extends Controller
 {
-    protected $facultyRepo;
+    protected $subjectRepo;
 
-    public function __construct(FacultyRepositoryInterface $facultyRepo)
+    public function __construct(SubjectRepositoryInterface $subjectRepo)
     {
-        $this->facultyRepo = $facultyRepo;
+        $this->subjectRepo = $subjectRepo;
     }
     /**
      * Display a listing of the resource.
@@ -20,9 +20,9 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        $faculties = $this->facultyRepo->getLimit(8);
+        $subjects = $this->subjectRepo->getLimit(8);
 
-        return view('backend.faculties.index', compact('faculties'));
+        return view('backend.subjects.index', compact('subjects'));
     }
 
     /**
@@ -32,9 +32,9 @@ class FacultyController extends Controller
      */
     public function create()
     {
-        $faculty = $this->facultyRepo->newModel();
+        $subject = $this->subjectRepo->newModel();
 
-        return view('backend.faculties.create_update', compact('faculty'));
+        return view('backend.subjects.create_update', compact('subject'));
     }
 
     /**
@@ -43,11 +43,11 @@ class FacultyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FacultyRequest $request)
+    public function store(SubjectRequest  $request)
     {
-        $this->facultyRepo->create($request->all());
+        $this->subjectRepo->create($request->all());
 
-        return redirect()->route('faculties.index')->with('success', 'Create success');
+        return redirect()->route('subjects.index')->with('success', 'Create success');
     }
 
     /**
@@ -69,9 +69,9 @@ class FacultyController extends Controller
      */
     public function edit($id)
     {
-        $faculty = $this->facultyRepo->findOrFail($id);
+        $subject = $this->subjectRepo->findOrFail($id);
 
-        return view('backend.faculties.create_update', compact('faculty'));
+        return view('backend.subjects.create_update', compact('subject'));
     }
 
     /**
@@ -81,11 +81,11 @@ class FacultyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FacultyRequest $request, $id)
+    public function update(SubjectRequest  $request, $id)
     {
-        $this->facultyRepo->update($id, $request->all());
+        $this->subjectRepo->update($id, $request->all());
 
-        return redirect()->route('faculties.index');
+        return redirect()->route('subjects.index');
     }
 
     /**
@@ -96,8 +96,8 @@ class FacultyController extends Controller
      */
     public function destroy($id)
     {
-        $this->facultyRepo->delete($id);
+        $this->subjectRepo->delete($id);
 
-        return redirect()->route('faculties.index');
+        return redirect()->route('subjects.index');
     }
 }

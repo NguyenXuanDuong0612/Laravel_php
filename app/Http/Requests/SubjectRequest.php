@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class FacultyRequest extends FormRequest
+class SubjectRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,8 +27,8 @@ class FacultyRequest extends FormRequest
         return [
             'name' => [
                 'required',
-                'max:50',
-                Rule::unique('faculties')->ignore($this->id)
+                'max:255',
+                Rule::unique('subjects')->ignore($this->id)
             ]
         ];
     }

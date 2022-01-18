@@ -2,7 +2,7 @@
     <div class="row al-items">
         <div>
             <a class="info__item-img info__item">
-                <img src="/backend/image/avatar.png" alt="" class="item-img">
+                <img src="/backend/image/avatar.jpg" alt="" class="item-img">
             </a>
         </div>
         <div class="name__online">
@@ -25,11 +25,11 @@
         </li>
         <li class="menu__item">
             <i class="fas fa-book"></i>
-            <a href="" class="menu__item-link">Subject management</a>
+            <a href="{{ route('subjects.index') }}" class="menu__item-link">Subject management</a>
         </li>
         <li class="menu__item">
             <i class="fas fa-print"></i>
-            <a href="" class="menu__item-link">Point management</a>
+            <a href="" class="menu__item-link">Mark management</a>
         </li>
     </ul>
 </div>

@@ -14,7 +14,7 @@
                     <i class="fas fa-envelope info__item"></i>
                     <i class="far fa-bell info__item"></i>
                     <a class="info__item-img info__item">
-                        <img src="/backend/image/avatar.png" alt="" class="item-img">
+                        <img src="/backend/image/avatar.jpg" alt="" class="item-img">
                     </a>
                     <span class="info__item">Nguyễn Xuân Dương</span>
                     <i class="fas fa-cogs info__item"></i>
