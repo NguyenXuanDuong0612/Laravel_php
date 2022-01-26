@@ -1,23 +1,23 @@
 @extends('backend.layouts.main')
 
 @section('content')
-    <div class="content col-10">
+    <div class="content row">
         @if (session('success'))
             <div class="alert alert-success" >{{ session('success') }}</div>
         @endif
         <div class="row flex">
-            <h2>Subject List</h2>
-            <a class="content__add" href="{{ route('subjects.create') }}"><i class="fas fa-plus plus"></i> Add New</a>
+            <h2>Danh sách môn học</h2>
+            <a class="content__add" href="{{ route('subjects.create') }}"><i class="fas fa-plus plus"></i> Thêm môn học</a>
         </div>
         <div class="table">
             <table >
                 <thead class="table__header">
                     <tr class="header__title">
                         <th>STT</th>
-                        <th>Name</th>
-                        <th>Date Created</th>
-                        <th>Date Updated</th>
-                        <th>Options</th>
+                        <th>Tên môn học</th>
+                        <th>Ngày tạo</th>
+                        <th>Ngày cấp nhật</th>
+                        <th>Thao tác</th>
                     </tr>
                 </thead>
                 <tbody class="table__body">

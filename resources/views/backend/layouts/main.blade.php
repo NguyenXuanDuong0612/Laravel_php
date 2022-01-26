@@ -12,7 +12,7 @@
 <body>
 @include('backend.layouts.header')
 <main class="row">
-    @include('backend.layouts.sidebar')
+
     @yield('content')
 </main>
 @include('backend.layouts.footer')

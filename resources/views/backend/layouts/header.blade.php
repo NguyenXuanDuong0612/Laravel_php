@@ -1,15 +1,23 @@
 <header class="header">
     <div class="row">
-        <div class="col-2">
-            <h3 class="bg-color">
-                Management
-            </h3>
+        <div class="col-5">
+            <ul class="menu  height">
+                <li class="menu__item">
+                    <i class="far fa-folder-open"></i>
+                    <a href="{{ route('faculties.index') }}" class="menu__item-link">Quản lý Khoa</a>
+                </li>
+                <li class="menu__item">
+                    <i class="fas fa-user"></i>
+                    <a href="{{ route('students.index') }}" class="menu__item-link">Quản lý sinh viên</a>
+                </li>
+                <li class="menu__item">
+                    <i class="fas fa-book"></i>
+                    <a href="{{ route('subjects.index') }}" class="menu__item-link">Quản lý môn học</a>
+                </li>
+            </ul>
         </div>
-        <div class="col-10">
-            <div class="row flex">
-                <div class= "icon-bars">
-                    <i class="fas fa-bars"></i>
-                </div>
+        <div class="col-7">
+            <div class="row flex-end">
                 <div class="info">
                     <i class="fas fa-envelope info__item"></i>
                     <i class="far fa-bell info__item"></i>
